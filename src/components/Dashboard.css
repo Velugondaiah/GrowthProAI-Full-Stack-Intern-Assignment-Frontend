@@ -1,0 +1,249 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.dashboard-bg-animated {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animated starfield background */
+.stars-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.star {
+  position: absolute;
+  width: 2.9px;
+  height: 2.9px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: starBlink 2.2s infinite alternate;
+}
+.star.blink1 { animation-duration: 1.5s; }
+.star.blink2 { animation-duration: 2.7s; }
+.star.blink3 { animation-duration: 3.3s; }
+.star.blink4 { animation-duration: 4.1s; }
+.star.cluster-topleft {
+  background: #fffbe7;
+  width: 3.2px;
+  height: 3.2px;
+  opacity: 0.95;
+}
+.star.cluster-bottomright {
+  background: #fffbe7;
+  width: 3.2px;
+  height: 3.2px;
+  opacity: 0.95;
+}
+@keyframes starBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+.moon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at 60% 40%, #fffbe7 70%, #f3e9c7 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 32px 12px #fffbe7cc, 0 0 80px 24px #fffbe744;
+  z-index: 2;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .moon {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.dashboard-main-attractive {
+  max-width: 430px;
+  width: 90vw;
+  margin: 40px auto 0 auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 22px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+  padding: 36px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.7s;
+  z-index: 1;
+  margin-top: 40px;
+  margin-bottom: 40px;
+ 
+}
+.dashboard-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #1a202c;
+  text-align: center;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 8px #fff8;
+}
+.dashboard-card-wrapper {
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+.loading-overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+.spinner-lg {
+  width: 48px;
+  height: 48px;
+  border: 6px solid #e0e7ef;
+  border-top: 6px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+.dashboard-footer {
+  margin-top: 32px;
+  color: #64748b;
+  font-size: 0.98rem;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 600px) {
+  .dashboard-main-attractive {
+    max-width: 99vw;
+    padding: 12px 2vw 12px 2vw;
+    min-height: 90vh;
+  }
+  .dashboard-title {
+    font-size: 1.3rem;
+  }
+  .dashboard-card-wrapper {
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.star.move {
+  animation: starMoveBLTR 7s linear infinite, starBlink 2.2s infinite alternate;
+}
+
+@keyframes starMoveBLTR {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  90% { opacity: 1; }
+  100% { transform: translate(70vw, -70vh) scale(1.2); opacity: 0.1; }
+}
+
+/* Santa from top-right to bottom-left */
+.santa {
+  position: absolute;
+  left: 90vw;
+  bottom: 90vh;
+  font-size: 2.8rem;
+  z-index: 3;
+  filter: drop-shadow(0 2px 8px #0008);
+  animation: santaFly 12s linear infinite;
+  pointer-events: none;
+  transform: scaleX(1); /* Face left */
+}
+
+@keyframes santaFly {
+  0% {
+    left: 90vw;
+    bottom: 90vh;
+    opacity: 0;
+    transform: scale(1.1) rotate(10deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .santa {
+    font-size: 1.7rem;
+  }
+}
+
+/* Sleigh follows same reversed path */
+.santa-sleigh {
+  position: absolute;
+  left: 90vw;
+  bottom: 90vh;
+  z-index: 4;
+  filter: drop-shadow(0 2px 8px #0008);
+  animation: santaSleighFly 12s linear infinite;
+  pointer-events: none;
+  transform: scaleX(1); /* Face left */
+}
+
+@keyframes santaSleighFly {
+  0% {
+    left: 90vw;
+    bottom: 90vh;
+    opacity: 0;
+    transform: scale(1.1) rotate(10deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .santa-sleigh {
+    width: 90px !important;
+    height: 30px !important;
+  }
+}

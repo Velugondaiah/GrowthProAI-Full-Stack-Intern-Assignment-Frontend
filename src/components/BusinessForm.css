@@ -1,0 +1,100 @@
+.business-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 14px;
+  padding: 18px 10px 10px 10px;
+  box-shadow: 0 2px 12px rgba(168,237,234,0.10);
+}
+.business-label {
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+.business-form input {
+  padding: 13px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  background: #f8fafc;
+  margin-bottom: 2px;
+  color: #222;
+  font-weight: 500;
+}
+.business-form input:focus {
+  border-color: #6366f1;
+  background: #fff;
+}
+.business-form input.input-error {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+.input-error-message {
+  color: #dc2626;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  font-weight: 500;
+}
+.business-form button {
+  padding: 14px 0;
+  background: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.business-form button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e0e7ef;
+  border-top: 3px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (max-width: 600px) {
+  .business-form input, .business-form button {
+    font-size: 0.98rem;
+    padding: 11px 10px;
+  }
+  .business-form {
+    padding: 8px 2vw 8px 2vw;
+    gap: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .business-form {
+    padding: 4px 1vw 4px 1vw;
+    gap: 8px;
+  }
+  .business-form input, .business-form button {
+    font-size: 0.93rem;
+    padding: 8px 10px;
+  }
+} 

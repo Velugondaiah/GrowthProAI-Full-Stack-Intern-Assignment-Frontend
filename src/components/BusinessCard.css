@@ -1,0 +1,113 @@
+.business-card {
+  width: 100%;
+  background: linear-gradient(120deg, #f1f5f9 60%, #e0e7ef 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(99,102,241,0.10);
+  padding: 22px 10px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  animation: fadeInUp 0.5s;
+  position: relative;
+}
+.business-rating {
+  font-size: 1.5rem;
+  color: #f59e42;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.star {
+  font-size: 1.7rem;
+  color: #fbbf24;
+  margin-right: 0;
+}
+.business-rating .star {
+  margin-left: 2px;
+  margin-right: 0;
+}
+.business-reviews {
+  font-size: 1.08rem;
+  color: #475569;
+  font-weight: 500;
+}
+.business-headline {
+  font-size: 1.08rem;
+  color: #334155;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0 12px 0;
+  line-height: 1.4;
+}
+.regenerate-btn {
+  padding: 12px 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(14,165,233,0.08);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.regenerate-btn:disabled {
+  background: #7dd3fc;
+  cursor: not-allowed;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e0e7ef;
+  border-top: 3px solid #0ea5e9;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  .business-card {
+    padding: 8px 2vw;
+    gap: 8px;
+  }
+  .business-headline {
+    font-size: 0.97rem;
+  }
+  .regenerate-btn {
+    font-size: 0.93rem;
+    padding: 9px 0;
+  }
+}
+@media (max-width: 400px) {
+  .business-card {
+    padding: 4px 1vw;
+    gap: 6px;
+  }
+  .business-headline {
+    font-size: 0.91rem;
+  }
+  .regenerate-btn {
+    font-size: 0.89rem;
+    padding: 7px 0;
+  }
+} 
