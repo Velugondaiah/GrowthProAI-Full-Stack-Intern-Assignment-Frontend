@@ -31,7 +31,7 @@ A beautiful, mobile-friendly React dashboard that simulates SEO and Google Busin
    npm run dev
    ```
 2. Open your browser and go to [http://localhost:5173](http://localhost:5173)
-3. Ensure the backend is running at [http://localhost:5000](http://localhost:3001) for full functionality.
+3. Ensure the backend is running at [http://localhost:3001](http://localhost:3001) for full functionality.
 
 ## Troubleshooting
 - If you see network errors, make sure the backend is running and CORS is enabled.
