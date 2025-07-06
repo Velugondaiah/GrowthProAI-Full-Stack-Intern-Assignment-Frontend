@@ -95,6 +95,8 @@ function Dashboard() {
       const minTime = 1200;
       if (elapsed < minTime) {
         setTimeout(() => {
+
+          
           
           setCardData(result);
           setSubmitted(true);
