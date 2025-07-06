@@ -84,7 +84,7 @@ function Dashboard() {
     setLoading(true);
     const start = Date.now();
     try {
-      const res = await fetch("https://growthproai-full-stack-intern-assignment.onrender.com/business-data", {
+      const res = await fetch("http://localhost:3001/business-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -95,6 +95,7 @@ function Dashboard() {
       const minTime = 1200;
       if (elapsed < minTime) {
         setTimeout(() => {
+          
           setCardData(result);
           setSubmitted(true);
           setLoading(false);
@@ -115,7 +116,7 @@ function Dashboard() {
     const start = Date.now();
     try {
       const res = await fetch(
-        `https://growthproai-full-stack-intern-assignment.onrender.com/regenerate-headline?name=${encodeURIComponent(form.name)}&location=${encodeURIComponent(form.location)}`
+        `http://localhost:3001/regenerate-headline?name=${encodeURIComponent(form.name)}&location=${encodeURIComponent(form.location)}`
       );
       if (!res.ok) throw new Error("Failed to regenerate headline");
       const result = await res.json();
